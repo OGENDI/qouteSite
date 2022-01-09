@@ -2,4 +2,19 @@
     <header class="text-center text-white p-3 bg-primary">
         <h1>My Quotes</h1>
     </header>
+    <div *ngFor="let quote of quotes" class=" row container m-auto">
+        <div class=" text-center">
+            <h5>{{quote.quote}}</h5>
+            <button class=" btn btn-success mx-2" > Upvote</button> <button class="btn btn-danger mx-2"> Downvote</button>
+        </div>
+
+        <div class=" d-flex  justify-content-between bg-secondary text-white">
+            <p>Author: {{quote.author}}</p>
+            <p>Posted by: {{quote.username}}</p>
+            <p>Posted on : {{quote.dateSubmitted |date:"shortDate"}}</p>
+        </div>
+
+
+
+    </div>
 </div>
