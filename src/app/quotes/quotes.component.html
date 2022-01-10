@@ -12,7 +12,7 @@
                     
                 </div>
                 <a href="#" (click)="moreinfo(i)" class="px-5">More</a>
-                <app-details *ngIf="quote.showDescription" [isquote]='quote'></app-details>
+                <app-details *ngIf="quote.showDescription" [isquote]='quote' (disliked)="deletequote($event,i)"></app-details>
                 
             </div>
         </div>
