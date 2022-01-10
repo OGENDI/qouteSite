@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MyQuotes } from '../my-quotes';
 
 @Component({
   selector: 'app-details',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  @Input() isquote!:MyQuotes;
+  @Output() disliked = new EventEmitter<boolean>();
+
+
+  delete(notgood:boolean){
+    this.disliked.emit(notgood);
+  }
+  
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { MyQuotes } from '../my-quotes';
 
 @Component({
@@ -7,9 +7,7 @@ import { MyQuotes } from '../my-quotes';
   styleUrls: ['./quotes.component.css']
 })
 export class QuotesComponent implements OnInit {
-  @Input() quote!:MyQuotes;
-  @Output() disliked = new EventEmitter<boolean>();
-
+  
 
   quotes:MyQuotes[]=[
     new MyQuotes(1,"The greatest glory in living lies not in never falling, but in rising every time we fall. ","Derick","-Nelson Mandela",0,0,new Date(2022,0,1)),
@@ -24,10 +22,6 @@ export class QuotesComponent implements OnInit {
     this.quotes.push(newQuote);
   }
 
-  delete(notgood:boolean){
-    this.disliked.emit(notgood);
-
-  }
   deletequote(notgood:boolean, index:number){
     if(notgood){
       var todelete = confirm( " This QUote will be deleted");
@@ -44,6 +38,10 @@ export class QuotesComponent implements OnInit {
   de_vote(id:number){
     
     this.quotes[id].downVote +=1
+  }
+
+  moreinfo(index:number){
+    this.quotes[index].showDescription= !this.quotes[index].showDescription;
   }
 
 

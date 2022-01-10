@@ -9,15 +9,11 @@
                     <h5>{{quote.quote}}</h5>
                     <button (click)="vote(i)" class=" btn btn-success mx-2"> Upvote</button> 
                     <button (click)="de_vote(i)"class="btn btn-primary mx-2">Downvote</button>
-                    <button (click)="delete(true)"class="btn btn-danger delete mx-2">Delete</button>
+                    
                 </div>
-                <div class=" d-flex  justify-content-between bg-secondary text-white">
-                    <p>Author: {{quote.author}}</p>
-                    <p>Posted by: {{quote.username}}</p>
-                    <p>Posted on : {{quote.dateSubmitted |date:"shortDate"}}</p>
-                    <p> <span class=" bg-success p-1">{{quote.upVote}} upvotes </span> <span
-                            class=" bg-black p-1">{{quote.downVote}} Downvotes</span></p>
-                </div>
+                <a href="#" (click)="moreinfo(i)" class="px-5">More</a>
+                <app-details *ngIf="quote.showDescription" [isquote]='quote'></app-details>
+                
             </div>
         </div>
         <div class="col-6">
