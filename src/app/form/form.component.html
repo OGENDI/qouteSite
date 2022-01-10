@@ -1,11 +1,11 @@
-<form (ngSubmit)="submit_quote()"   class=" w-75 m-auto">
+<form (ngSubmit)="submit_quote()"    class=" w-75 m-auto">
     <label for="" class="form-label">Your Name</label>
-    <input type="text" name="username"  class="form-control">
+    <input type="text" [(ngModel)]="userquote.username" name="username"  class="form-control">
     <label for="">Add Your Qoute</label>
-    <textarea name="" class="form-control" id="" cols="10" rows="4"></textarea>
+    <textarea name="quote" class="form-control" [(ngModel)]='userquote.quote' id="" cols="10" rows="4"></textarea>
     <label for=""> Author</label>
-    <input type="text" class="form-control">
+    <input type="text" name="author" class="form-control" [(ngModel)]="userquote.author">
     <label for="">Select Date</label>
-    <input type="date" name="" class="form-control" id="">
+    <input type="date" name="date" [(ngModel)]="userquote.dateSubmitted" class="form-control" id="">
     <button type="submit" class=" btn btn-outline-primary">Add quote</button>
 </form>
